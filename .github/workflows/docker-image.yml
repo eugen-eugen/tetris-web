@@ -19,7 +19,7 @@ jobs:
     - name: Login to Registry
       shell: bash
       env:
-        DOCKERREGISTRYPASSWORD: TTTTTTTTT
+        DOCKERREGISTRYPASSWORD: ${{ secrets.DOCKERREGISTRYPASSWORD }}
       run: echo "${DOCKERREGISTRYPASSWORD}"
     - name: Push to registry
       run: docker push kieabdocker.azurecr.io/demo/tetris-web
