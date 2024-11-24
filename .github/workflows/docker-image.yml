@@ -17,6 +17,6 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag kieabdocker.azurecr.io/demo/tetris-web
     - name: Login to Registry
-      run: docker login -u admin -p yynPGzDanygFmvf7fJR50KJiBOb53XwwToPnitLbAS+ACRCutM7d kieabdocker.azurecr.io
+      run: docker login -u admin -p ${{ secrets.DOCKERREGISTRYPASSWORD }} kieabdocker.azurecr.io
     - name: Push to registry
       run: docker push kieabdocker.azurecr.io/demo/tetris-web
