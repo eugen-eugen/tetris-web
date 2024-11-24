@@ -17,9 +17,10 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag kieabdocker.azurecr.io/demo/tetris-web
     - name: Login to Registry
-      shell: bash
-      env:
-        DOCKERREGISTRYPASSWORD: ${{ secrets.DOCKERREGISTRYPASSWORD }}
-      run: docker login -u admin -p "${{ secrets.DOCKERREGISTRYPASSWORD }}" kieabdocker.azurecr.io 
+      uses: docker/login-action@v3
+      with:
+        registry: kieabdocker.azurecr.io
+        username: admin
+        password: ${{ secrets.DOCKERREGISTRYPASSWORD }}
     - name: Push to registry
       run: docker push kieabdocker.azurecr.io/demo/tetris-web
