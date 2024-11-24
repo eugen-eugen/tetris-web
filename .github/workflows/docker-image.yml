@@ -1,4 +1,4 @@
-name: Docker Image CI
+ho name: Docker Image CI
 
 on:
   push:
@@ -20,6 +20,6 @@ jobs:
       shell: bash
       env: # Or as an environment variable
         DOCKERREGISTRYPASSWORD: TTTTTTTTT
-      run: docker login -u admin -p "$DOCKERREGISTRYPASSWORD" kieabdocker.azurecr.io
+      run: echo $DOCKERREGISTRYPASSWORD docker login -u admin -p "$DOCKERREGISTRYPASSWORD" kieabdocker.azurecr.io
     - name: Push to registry
       run: docker push kieabdocker.azurecr.io/demo/tetris-web
