@@ -18,7 +18,7 @@ jobs:
       run: docker build . --file Dockerfile --tag kieabdocker.azurecr.io/demo/tetris-web
     - name: Login to Registry
       env: # Or as an environment variable
-        DOCKERREGISTRYPASSWORD: ${{ secrets.DOCKERREGISTRYPASSWORD }}
+        DOCKERREGISTRYPASSWORD: TTTTTTTTT
       run: docker login -u admin -p "$DOCKERREGISTRYPASSWORD" kieabdocker.azurecr.io
     - name: Push to registry
       run: docker push kieabdocker.azurecr.io/demo/tetris-web
