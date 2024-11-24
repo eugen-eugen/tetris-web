@@ -17,6 +17,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag kieabdocker.azurecr.io/demo/tetris-web
     - name: Login to Registry
+      shell: bash
       env: # Or as an environment variable
         DOCKERREGISTRYPASSWORD: TTTTTTTTT
       run: docker login -u admin -p "$DOCKERREGISTRYPASSWORD" kieabdocker.azurecr.io
