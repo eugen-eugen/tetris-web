@@ -21,6 +21,6 @@ jobs:
       with:
         registry: kieabdocker.azurecr.io
         username: admin
-        password: yynPGzDanygFmvf7fJR50KJiBOb53XwwToPnitLbAS+ACRCutM7d
+        password: ${{ secrets.DOCKERREGISTRYPASSWORD }}
     - name: Push to registry
       run: docker push kieabdocker.azurecr.io/demo/tetris-web
