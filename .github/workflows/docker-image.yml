@@ -19,4 +19,4 @@ jobs:
     - name: Login to Registry
       run: docker login -u admin -p yynPGzDanygFmvf7fJR50KJiBOb53XwwToPnitLbAS+ACRCutM7d kieabdocker.azurecr.io
     - name: Push to registry
-      run: docker push demo/tetris-web
+      run: docker push kieabdocker.azurecr.io/demo/tetris-web
